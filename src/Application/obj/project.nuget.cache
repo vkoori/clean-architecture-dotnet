@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SOgkT9ZGYde1zS4h+wSnhgHygTOsYTnNNBNkr3H1/VfOPUa3qoZbW5Gm+MGCXPicP3bjJpL1jcnYUSvUh2JswA==",
+  "success": true,
+  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/home/kooriv/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

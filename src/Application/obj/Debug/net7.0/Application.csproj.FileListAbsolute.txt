@@ -1,0 +1,15 @@
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/bin/Debug/net7.0/Application.deps.json
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/bin/Debug/net7.0/Application.dll
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/bin/Debug/net7.0/Application.pdb
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/bin/Debug/net7.0/Domain.dll
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/bin/Debug/net7.0/Domain.pdb
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.AssemblyInfoInputs.cache
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.AssemblyInfo.cs
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.csproj.CopyComplete
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.dll
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/refint/Application.dll
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/Application.pdb
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/Debug/net7.0/ref/Application.dll

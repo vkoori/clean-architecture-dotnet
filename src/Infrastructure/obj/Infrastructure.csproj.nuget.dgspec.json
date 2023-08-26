@@ -1,0 +1,230 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj",
+        "packagesPath": "/home/kooriv/.nuget/packages/",
+        "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/nuget.config",
+          "/home/kooriv/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj": {
+                "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj",
+        "packagesPath": "/home/kooriv/.nuget/packages/",
+        "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/nuget.config",
+          "/home/kooriv/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/kooriv/.nuget/packages/",
+        "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/nuget.config",
+          "/home/kooriv/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj": {
+                "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "DotNetCore.CAP": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "DotNetCore.CAP.Dashboard": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "DotNetCore.CAP.InMemoryStorage": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "DotNetCore.CAP.RabbitMQ": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "EFCore.NamingConventions": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.116, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

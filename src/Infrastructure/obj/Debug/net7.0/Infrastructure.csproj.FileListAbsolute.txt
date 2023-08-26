@@ -1,0 +1,5 @@
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/Debug/net7.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs
+/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache
