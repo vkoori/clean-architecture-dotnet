@@ -51,7 +51,24 @@ services:
             timeout: 10s
             retries: 6
 
-    #################### redis #################### TODO: redis password
+    #################### clickhouse ####################
+    clickhouse:
+        image: clickhouse/clickhouse-server:23.3-alpine
+        environment:
+            TZ: ${APP_TZ:-Asia/Tehran}
+            CLICKHOUSE_DB: ${CLICKHOUSE_DB:-clean_architecture}
+            CLICKHOUSE_USER: ${CLICKHOUSE_USER:-admin}
+            CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-admin}
+        volumes:
+            - clickhouse-data:/var/lib/clickhouse
+            - clickhouse-config:/etc/clickhouse-server
+        healthcheck:
+            test: wget --no-verbose --tries=1 --spider http://localhost:8123/ping || exit 1
+            # interval: 30s
+            timeout: 15s
+            retries: 6
+
+    #################### redis ####################
     redis:
         image: redis:7.2-rc
         hostname: ${REDIS_HOST:-127.0.0.1}
@@ -62,7 +79,6 @@ services:
             options:
                 max-size: "50m"
         command: --port ${REDIS_PORT:-6379}
-        # command: sh -c 'if [ -n "${REDIS_PASSWORD:-1234}" ]; then redis-server --requirepass "${REDIS_PASSWORD:-1234}"; else redis-server; fi'
         networks:
             - app-network
             - redis-commander-network
@@ -140,4 +156,8 @@ volumes:
     mysql-data:
         driver: local
     rabbit-data:
+        driver: local
+    clickhouse-data:
+        driver: local
+    clickhouse-config:
         driver: local

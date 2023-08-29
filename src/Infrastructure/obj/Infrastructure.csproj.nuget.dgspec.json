@@ -161,6 +161,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ClickHouse.Ado": {
+              "target": "Package",
+              "version": "[1.5.5, )"
+            },
             "DotNetCore.CAP": {
               "target": "Package",
               "version": "[7.2.0, )"

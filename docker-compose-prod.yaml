@@ -6,6 +6,14 @@ services:
         expose:
             - ${DB_PORT:-3306}
 
+    #################### clickhouse ####################
+    clickhouse:
+        expose:
+            - "8123"   # HTTP port
+            - "9000"   # Native client port
+            - "9009"   # TCP port
+            - "9100"   # gRPC
+
     #################### redis ####################
     redis:
         expose:
@@ -14,6 +22,6 @@ services:
     ################### rabbitmq ##################
     rabbitmq:
         expose:
-            - ${RABBIT_PORT:-5672}
+            - "5672"
         ports:
-            - ${RABBIT_MANAGEMENT:-}:${RABBIT_MANAGEMENT:-15672}
+            - ${RABBIT_MANAGEMENT:-}:15672

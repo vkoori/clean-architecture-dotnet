@@ -1,9 +1,8 @@
-﻿using Application.Caching.InterFaces;
+﻿namespace Infrastructure.Caching.Redis;
+
+using Application.Caching.InterFaces;
 using Newtonsoft.Json;
 using StackExchange.Redis;
-
-namespace Infrastructure.Caching.Redis;
-
 
 public class RedisCacheProvider : ICacheProvider
 {

@@ -22,13 +22,13 @@ install:
 ifeq ($(findstring $(APP_ENV),Development Local),)
 	docker compose --profile $(APP_ENV) -f docker-compose.yaml -f docker-compose-prod.yaml up -d
 else
-	LOCAL_RABBIT_PORT=$(RABBIT_PORT) LOCAL_DB_PORT=$(DB_PORT) LOCAL_REDIS_PORT=$(REDIS_PORT) docker compose --profile $(APP_ENV) -f docker-compose.yaml -f docker-compose-stage.yaml up -d
+	LOCAL_CLICKHOUSE_HTTP_PORT=$(HOST_CLICKHOUSE_HTTP_PORT) LOCAL_CLICKHOUSE_NATIVE_PORT=$(HOST_CLICKHOUSE_NATIVE_PORT) LOCAL_CLICKHOUSE_TCP_PORT=$(HOST_CLICKHOUSE_TCP_PORT) LOCAL_CLICKHOUSE_GRPC_PORT=$(HOST_CLICKHOUSE_GRPC_PORT) LOCAL_RABBIT_PORT=$(HOST_RABBIT_PORT) LOCAL_DB_PORT=$(DB_PORT) LOCAL_REDIS_PORT=$(REDIS_PORT) docker compose --profile $(APP_ENV) -f docker-compose.yaml -f docker-compose-stage.yaml up -d
 endif
 install-with-gui:
 ifeq ($(findstring $(APP_ENV),Development Local),)
 	docker compose --profile $(APP_ENV) --profile phpmyadmin --profile redis-commander -f docker-compose.yaml -f docker-compose-prod.yaml up -d
 else
-	LOCAL_RABBIT_PORT=$(RABBIT_PORT) LOCAL_RABBIT_MANAGEMENT=$(RABBIT_MANAGEMENT) LOCAL_DB_PORT=$(DB_PORT) LOCAL_REDIS_PORT=$(REDIS_PORT) docker compose --profile $(APP_ENV) --profile phpmyadmin --profile redis-commander -f docker-compose.yaml -f docker-compose-stage.yaml up -d
+	LOCAL_CLICKHOUSE_HTTP_PORT=$(HOST_CLICKHOUSE_HTTP_PORT) LOCAL_CLICKHOUSE_NATIVE_PORT=$(HOST_CLICKHOUSE_NATIVE_PORT) LOCAL_CLICKHOUSE_TCP_PORT=$(HOST_CLICKHOUSE_TCP_PORT) LOCAL_CLICKHOUSE_GRPC_PORT=$(HOST_CLICKHOUSE_GRPC_PORT) LOCAL_RABBIT_PORT=$(HOST_RABBIT_PORT) LOCAL_RABBIT_MANAGEMENT=$(HOST_RABBIT_MANAGEMENT) LOCAL_DB_PORT=$(DB_PORT) LOCAL_REDIS_PORT=$(REDIS_PORT) docker compose --profile $(APP_ENV) --profile phpmyadmin --profile redis-commander -f docker-compose.yaml -f docker-compose-stage.yaml up -d
 endif
 
 ################## phony ##################

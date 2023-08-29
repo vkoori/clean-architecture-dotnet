@@ -1,13 +1,12 @@
-﻿using Domain.Entities;
+﻿namespace Infrastructure.Repositories;
+
+using Domain.Entities.Marketing;
 using Domain.Repositories;
 using Infrastructure.Persistance.EFCore;
-using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
-
-public class SampleRepository : EFBaseRepository<Sample>, ISampleRepository
+public class SampleRepository : EFBaseRepository<AfterOrderRules>, ISampleRepository
 {
-    public SampleRepository(SampleDbContext sampleDbContext) : base(sampleDbContext)
+    public SampleRepository(MarketingDbContext marketingDbContext) : base(marketingDbContext)
     {
 
     }

@@ -6,13 +6,21 @@ services:
         ports:
             - ${LOCAL_DB_PORT:-}:${DB_PORT:-3306}
 
+    #################### clickhouse ####################
+    clickhouse:
+        ports:
+            - ${LOCAL_CLICKHOUSE_HTTP_PORT}:8123   # HTTP API Port for http requests. used by JDBC, ODBC and web interfaces.
+            - ${LOCAL_CLICKHOUSE_NATIVE_PORT}:9000   # Native Protocol port (also referred to as ClickHouse TCP protocol). Used by ClickHouse apps and processes like clickhouse-server, clickhouse-client, and native ClickHouse tools. used for inter-server communication for distributed queries.
+            - ${LOCAL_CLICKHOUSE_TCP_PORT}:9009   # Inter-server communication port for low-level data access. used for data exchange, replication, inter-server communication
+            - ${LOCAL_CLICKHOUSE_GRPC_PORT}:9100   # gRPC port
+
     #################### redis ####################
     redis:
         ports:
-            - ${LOCAL_REDIS_PORT:-}:${REDIS_PORT:-6379}
+            - ${LOCAL_REDIS_PORT:-}:6379
 
     ################### rabbitmq ##################
     rabbitmq:
         ports:
-            - ${LOCAL_RABBIT_PORT:-}:${RABBIT_PORT:-5672}
-            - ${RABBIT_MANAGEMENT:-}:${RABBIT_MANAGEMENT:-15672}
+            - ${LOCAL_RABBIT_PORT:-}:5672
+            - ${LOCAL_RABBIT_MANAGEMENT:-}:15672

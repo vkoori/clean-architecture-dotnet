@@ -17,7 +17,7 @@ namespace Infrastructure.Repositories
             _dbSet = dbContext.Set<T>();
         }
 
-        public EFBaseRepository(SampleDbContext sampleDbContext)
+        public EFBaseRepository(MarketingDbContext sampleDbContext)
         {
             _dbSet = sampleDbContext.Set<T>();
         }

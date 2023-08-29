@@ -12,9 +12,6 @@ public static class ApiVersioningRegistration
             options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
             options.ReportApiVersions = true;
             options.ApiVersionReader = ApiVersionReader.Combine(
-                // new QueryStringApiVersionReader("api-version"),
-                // new HeaderApiVersionReader("X-API-Version"),
-                // new MediaTypeApiVersionReader("ver"),
                 new UrlSegmentApiVersionReader()
             );
         });

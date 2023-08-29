@@ -17,16 +17,10 @@ public static class ConnectionStringsRegistration
             throw new ConnectionStringException();
         }
 
-        //EF Core
-        services.AddEFCoreMySqlDbContext(mySqlConnectionString);
-        //Redis
+        // Mysql
+        services.AddEFCoreMarketingDbContext(mySqlConnectionString);
+        services.AddEFCoreCoreDbContext(mySqlConnectionString);
+        // Redis
         services.AddRedis(redisConnectionString);
-    }
-
-    public static void UpdateMigrations(this IServiceCollection services)
-    {
-        using IServiceScope scope = services.BuildServiceProvider().CreateScope();
-        SampleDbContext dbContext = scope.ServiceProvider.GetRequiredService<SampleDbContext>();
-        dbContext.Database.Migrate();
     }
 }
