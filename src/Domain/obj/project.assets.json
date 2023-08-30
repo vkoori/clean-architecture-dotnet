@@ -13,14 +13,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj",
+      "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj",
+      "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Domain/Domain.csproj",
       "packagesPath": "/home/kooriv/.nuget/packages/",
-      "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/obj/",
+      "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/nuget.config",
+        "/home/kooriv/Desktop/Develop/snappfood/new/Snake/nuget.config",
         "/home/kooriv/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [

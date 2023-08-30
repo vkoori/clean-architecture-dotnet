@@ -2,7 +2,7 @@ namespace Application.DbTransaction;
 
 using System;
 
-public interface ISampleDb
+public interface ITransactionProvider
 {
     Task Transaction(Func<Task> action);
 }

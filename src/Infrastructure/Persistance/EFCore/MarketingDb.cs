@@ -3,7 +3,7 @@ namespace Infrastructure.Persistance.EFCore;
 using System;
 using Application.DbTransaction;
 
-public class MarketingDb : ISampleDb
+public class MarketingDb : ITransactionProvider
 {
     private readonly MarketingDbContext _dbContext;
 

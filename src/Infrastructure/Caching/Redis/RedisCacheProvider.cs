@@ -14,21 +14,16 @@ public class RedisCacheProvider : ICacheProvider
         _database = connectionMultiplexer.GetDatabase();
     }
 
-    public async Task<T> GetAsync<T>(string key)
+    public async Task<T?> GetAsync<T>(string key)
     {
-        var serializedData = await _database.StringGetAsync(key);
-        if (!serializedData.IsNull)
-        {
-            return JsonConvert.DeserializeObject<T>(serializedData);
-        }
-
-        return default(T);
+        var serializedValue = await _database.StringGetAsync(key);
+        return Deserialize<T>(serializedValue);
     }
 
-    public async Task SetAsync<T>(string key, T value, TimeSpan expiration)
+    public async Task SetAsync<T>(string key, T value, TimeSpan? expiration = null)
     {
-        var serializedData = JsonConvert.SerializeObject(value);
-        await _database.StringSetAsync(key, serializedData, expiration);
+        var serializedValue = Serialize(value);
+        await _database.StringSetAsync(key, serializedValue, expiration);
     }
 
     public async Task<bool> RemoveAsync(string key)
@@ -40,4 +35,19 @@ public class RedisCacheProvider : ICacheProvider
     {
         return await _database.KeyExistsAsync(key);
     }
+
+    private static T? Deserialize<T>(RedisValue serializedValue)
+    {
+        if (!serializedValue.IsNull)
+        {
+            return JsonConvert.DeserializeObject<T>(serializedValue!);
+        }
+        return default;
+    }
+
+    private static RedisValue Serialize<T>(T value)
+    {
+        return JsonConvert.SerializeObject(value);
+    }
+
 }

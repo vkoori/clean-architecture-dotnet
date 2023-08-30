@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZoK3yzrjJbTFnGA1hMoD9XubrnJ+skkRoqsVoieJp2lpFEI4M6+8opzCVuZ4obm9jxATZT+6xAMRFE0urjGaCQ==",
+  "dgSpecHash": "F0JN1cgsegL1Jg95vwCi3EPrzq4W0a0XDR3j+iu3y9EsvZenyaeQNAoNgsqlXTCgs+58LAgnur4Zz4cJceY18g==",
   "success": true,
-  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Domain/Domain.csproj",
+  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Domain/Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

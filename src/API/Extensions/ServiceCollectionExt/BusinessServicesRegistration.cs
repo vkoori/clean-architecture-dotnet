@@ -1,18 +1,13 @@
-using Application.Services.Implementations.V1.Sample;
-using Application.Services.Interfaces.V1.Sample;
-
 namespace API.Extensions.ServiceCollectionExt;
+
+using Application.Services.Implementations.V1.AfterOrder;
+using Application.Services.Interfaces.V1.AfterOrder;
 
 public static class BusinessServicesRegistration
 {
     public static void AddBusinessServices(this IServiceCollection services)
     {
-        services.AddScoped<ISampleCreateServiceV1, SampleCreateServiceV1>();
-        services.AddScoped<ISampleDeleteServiceV1, SampleDeleteServiceV1>();
-        services.AddScoped<ISampleGetAllServiceV1, SampleGetAllServiceV1>();
-        services.AddScoped<ISampleGetServiceV1, SampleGetServiceV1>();
-        services.AddScoped<ISampleUpdateServiceV1, SampleUpdateServiceV1>();
-
+        services.AddScoped<IAfterOrderAddServiceV1, AfterOrderAddServiceV1>();
 
     }
 }

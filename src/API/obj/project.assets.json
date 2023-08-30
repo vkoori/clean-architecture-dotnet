@@ -7304,14 +7304,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/API/API.csproj",
+      "projectUniqueName": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/API/API.csproj",
+      "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/API/API.csproj",
       "packagesPath": "/home/kooriv/.nuget/packages/",
-      "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/API/obj/",
+      "outputPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/nuget.config",
+        "/home/kooriv/Desktop/Develop/snappfood/new/Snake/nuget.config",
         "/home/kooriv/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -7324,11 +7324,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj": {
-              "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj"
+            "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Application/Application.csproj": {
+              "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Application/Application.csproj"
             },
-            "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Infrastructure/Infrastructure.csproj"
+            "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Infrastructure/Infrastructure.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SOgkT9ZGYde1zS4h+wSnhgHygTOsYTnNNBNkr3H1/VfOPUa3qoZbW5Gm+MGCXPicP3bjJpL1jcnYUSvUh2JswA==",
+  "dgSpecHash": "AjN+9VKmiwGfKjURwo6LHgP+OZ5tVzQR5Anlp2gYehVxrCQyihDcwe9cbRkPWUOo1ouRPn+EwUi8LspoA9vYew==",
   "success": true,
-  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/Application/Application.csproj",
+  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/Application/Application.csproj",
   "expectedPackageFiles": [
     "/home/kooriv/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512"
   ],

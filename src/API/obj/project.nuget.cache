@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IqC/5OX2aEdlzA/ntCFrYlAEBrHaHauL0WApNwVzbh/tAWT7TjgwkJqjQGkXCtO7f8UFYutMXSyq6+6kF6j2lw==",
+  "dgSpecHash": "2fku1cqttR6kRNYtctCs0H/bGm8b9YvX3DMx4fmzEIqUUlpMYt1zjRovSY9uhDYTINk85EnDC5JZs651RhuPZA==",
   "success": true,
-  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Marketing/src/API/API.csproj",
+  "projectFilePath": "/home/kooriv/Desktop/Develop/snappfood/new/Snake/src/API/API.csproj",
   "expectedPackageFiles": [
     "/home/kooriv/.nuget/packages/clickhouse.ado/1.5.5/clickhouse.ado.1.5.5.nupkg.sha512",
     "/home/kooriv/.nuget/packages/consul/1.6.10.9/consul.1.6.10.9.nupkg.sha512",

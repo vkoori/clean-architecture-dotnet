@@ -1,7 +1,7 @@
-﻿using Application.Caching.InterFaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿namespace Infrastructure.Caching.Redis;
 
-namespace Infrastructure.Caching.Redis;
+using Application.Caching.InterFaces;
+using Microsoft.Extensions.DependencyInjection;
 
 public static class RedisRegistration
 {

@@ -3,7 +3,7 @@ namespace Infrastructure.Persistance.EFCore;
 using System;
 using Application.DbTransaction;
 
-public class CoreDb : ISampleDb
+public class CoreDb : ITransactionProvider
 {
     private readonly CoreDbContext _dbContext;
 

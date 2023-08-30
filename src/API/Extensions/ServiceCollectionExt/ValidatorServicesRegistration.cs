@@ -1,13 +1,13 @@
 namespace API.Extensions.ServiceCollectionExt;
 
-using Application.DTOs.V1;
-using Application.Validations.V1;
+using Application.DTOs.Input.V1.AfterOrder;
+using Application.Validations.V1.AfterOrder;
 using FluentValidation;
 
 public static class ValidatorServicesRegistration
 {
     public static void AddValidatorServices(this IServiceCollection services)
     {
-        services.AddScoped<IValidator<SampleFilterV1>, SampleFilterValidatorV1>();
+        services.AddScoped<IValidator<AfterOrderAddDtoV1>, AfterOrderAddValidationV1>();
     }
 }
