@@ -17,14 +17,16 @@ public class AfterOrderRules : BaseEntity
     public string? Platforms { get; set; }
     public string? MinVersion { get; set; }
     public string? MaxVersion { get; set; }
-    public string? MinBasketValue { get; set; }
-    public string? MaxBasketValue { get; set; }
+    public uint? MinBasketValue { get; set; }
+    public uint? MaxBasketValue { get; set; }
     public string? Cities { get; set; }
     public bool? FirstOrder { get; set; }
     public string? Vendors { get; set; }
     public string? CategoryIds { get; set; }
     public string? VendorSuperTypes { get; set; }
     public string? Services { get; set; }
+
+    public ICollection<AfterOrderActions>? AfterOrderRuleAfterOrder { get; set; }
 
     // relations
     // public required string ProcessedOrders { get; set; } // accepted orders

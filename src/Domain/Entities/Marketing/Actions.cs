@@ -12,4 +12,6 @@ public class Actions : BaseEntity
     // public required DateTimeOffset ExpireAt { get; set; } // use for voucher
     // public required int Duration { get; set; } // use for vip package
     // public required string MessageTemplate { get; set; }
+
+    public ICollection<AfterOrderActions>? ActionAfterOrder { get; set; }
 }

@@ -57,13 +57,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="DotNetCore.CAP" Version="7.2.0" />
-    <PackageReference Update="DotNetCore.CAP.RabbitMQ" Version="7.2.0" />
-    <PackageReference Update="DotNetCore.CAP.Dashboard" Version="7.2.0" />
-    <PackageReference Update="DotNetCore.CAP.InMemoryStorage" Version="7.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Update="EFCore.NamingConventions" Version="7.0.2" />
     <PackageReference Update="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0"/>
     <PackageReference Update="ClickHouse.Ado" Version="1.5.5"/>

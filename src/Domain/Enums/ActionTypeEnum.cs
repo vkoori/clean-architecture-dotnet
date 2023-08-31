@@ -11,4 +11,5 @@ public enum ActionTypeEnum
     CUSTOMER_AFFILIATE = 7,
     DEEMA_AFFILIATE = 8,
     IRANCELL_AFFILIATE = 9,
+    RONAK_QUEUE = 10,
 }

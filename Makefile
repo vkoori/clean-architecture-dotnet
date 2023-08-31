@@ -3,15 +3,16 @@ MIGRATION_NAME := $(shell date +"%Y%m%d%H%M%S")
 API_CSPROJ = src/API/API.csproj
 INFRA_CSPROJ = src/Infrastructure/Infrastructure.csproj
 MIGRATION_PATH = Persistance/EFCore/Migrations
+DB_CONTEXT := MarketingDbContext
 include .env
 
 ################## Migration ##################
 migration-add:
-	dotnet ef migrations add $(MIGRATION_NAME) --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ} --output-dir ${MIGRATION_PATH}
-migration-update:
-	dotnet ef database update --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ}
-migration-rollback:
-	dotnet ef database update $(MIGRATION_NAME) --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ}
+	dotnet ef migrations add $(MIGRATION_NAME) --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ} --output-dir ${MIGRATION_PATH} --context ${DB_CONTEXT}
+migration-up:
+	dotnet ef database update --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ} --context ${DB_CONTEXT}
+migration-down:
+	dotnet ef database update $(MIGRATION_NAME) --startup-project ${API_CSPROJ} --project ${INFRA_CSPROJ} --context ${DB_CONTEXT}
 
 # migration:
 # 	@make migration-add
@@ -32,4 +33,4 @@ else
 endif
 
 ################## phony ##################
-.PHONY: migration-create migration-up migration-down install install-with-gui
+.PHONY: migration-add migration-up migration-down install install-with-gui

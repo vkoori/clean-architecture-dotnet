@@ -41,7 +41,7 @@ make migration-add MIGRATION_NAME=<migration_name>
 *up migrations:*
 
 ```shell
-make migration-update
+make migration-up
 ```
 
 ---
@@ -49,12 +49,7 @@ make migration-update
 *rollback migrations:*
 
 ```shell
-make migration-rollback MIGRATION_NAME=<migration_name>
+make migration-down MIGRATION_NAME=<migration_name>
 ```
 
 ---
-
-# About CAP :
-
-Dear Snappfood developers, please make contact with us whenever you want to use CAP.
-You need custom nuget.config and adding a feature about selecting exchange type.
