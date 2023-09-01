@@ -20,5 +20,9 @@ public class ActionsConfiguration : BaseEntityConfiguration<Actions>, IEntityTyp
                 .WithOne(relation => relation.ActionBelong)
                 .HasForeignKey(relation => relation.ActionId)
                 .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(property => property.ActionAfterRegister)
+                .WithOne(relation => relation.ActionBelong)
+                .HasForeignKey(relation => relation.ActionId)
+                .OnDelete(DeleteBehavior.Restrict);
     }
 }

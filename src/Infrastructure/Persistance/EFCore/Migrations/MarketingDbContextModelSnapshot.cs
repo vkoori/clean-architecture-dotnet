@@ -79,11 +79,19 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                         .HasColumnType("bigint unsigned")
                         .HasColumnName("after_order_rule_id");
 
+                    b.Property<ushort?>("CountExecuted")
+                        .HasColumnType("smallint unsigned")
+                        .HasColumnName("count_executed");
+
                     b.Property<DateTimeOffset>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp")
                         .HasColumnName("created_at")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<ushort?>("MaxExecution")
+                        .HasColumnType("smallint unsigned")
+                        .HasColumnName("max_execution");
 
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
@@ -225,6 +233,134 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                     b.ToTable("after_order_rules", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Marketing.AfterRegisterActions", b =>
+                {
+                    b.Property<ulong>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("id");
+
+                    b.Property<ulong>("ActionId")
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("action_id");
+
+                    b.Property<ulong>("AfterRegisterRuleId")
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("after_register_rule_id");
+
+                    b.Property<ushort?>("CountExecuted")
+                        .HasColumnType("smallint unsigned")
+                        .HasColumnName("count_executed");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<ushort?>("MaxExecution")
+                        .HasColumnType("smallint unsigned")
+                        .HasColumnName("max_execution");
+
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.HasKey("Id")
+                        .HasName("pk_after_register_actions");
+
+                    b.HasIndex("ActionId")
+                        .HasDatabaseName("ix_after_register_actions_action_id");
+
+                    b.HasIndex("AfterRegisterRuleId")
+                        .HasDatabaseName("ix_after_register_actions_after_register_rule_id");
+
+                    b.ToTable("after_register_actions", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.Marketing.AfterRegisterRules", b =>
+                {
+                    b.Property<ulong>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Cities")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("cities");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("Enable")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("enable");
+
+                    b.Property<bool?>("HasReferrer")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("has_referrer");
+
+                    b.Property<string>("MaxVersion")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("max_version");
+
+                    b.Property<string>("MinVersion")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("min_version");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("name");
+
+                    b.Property<string>("Platforms")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("platforms");
+
+                    b.Property<DateOnly?>("StartAt")
+                        .HasColumnType("date")
+                        .HasColumnName("start_at");
+
+                    b.Property<TimeOnly?>("StartTime")
+                        .HasColumnType("time(6)")
+                        .HasColumnName("start_time");
+
+                    b.Property<DateOnly?>("StopAt")
+                        .HasColumnType("date")
+                        .HasColumnName("stop_at");
+
+                    b.Property<TimeOnly?>("StopTime")
+                        .HasColumnType("time(6)")
+                        .HasColumnName("stop_time");
+
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.HasKey("Id")
+                        .HasName("pk_after_register_rules");
+
+                    b.ToTable("after_register_rules", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.Marketing.Campaigns", b =>
                 {
                     b.Property<ulong>("Id")
@@ -293,6 +429,44 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                     b.ToTable("processed_orders", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Marketing.Reports", b =>
+                {
+                    b.Property<ulong>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("id");
+
+                    b.Property<int>("ActionType")
+                        .HasColumnType("int")
+                        .HasColumnName("action_type");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<string>("Extra")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("extra");
+
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                    b.Property<ulong>("UserId")
+                        .HasColumnType("bigint unsigned")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("pk_reports");
+
+                    b.ToTable("reports", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.Marketing.AfterOrderActions", b =>
                 {
                     b.HasOne("Domain.Entities.Marketing.Actions", "ActionBelong")
@@ -314,14 +488,42 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                     b.Navigation("AfterOrderRuleBelong");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Marketing.AfterRegisterActions", b =>
+                {
+                    b.HasOne("Domain.Entities.Marketing.Actions", "ActionBelong")
+                        .WithMany("ActionAfterRegister")
+                        .HasForeignKey("ActionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_after_register_actions_actions_action_belong_id");
+
+                    b.HasOne("Domain.Entities.Marketing.AfterRegisterRules", "AfterRegisterRuleBelong")
+                        .WithMany("AfterRegisterRuleAfterRegister")
+                        .HasForeignKey("AfterRegisterRuleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_after_register_actions_after_register_rules_after_register_rul");
+
+                    b.Navigation("ActionBelong");
+
+                    b.Navigation("AfterRegisterRuleBelong");
+                });
+
             modelBuilder.Entity("Domain.Entities.Marketing.Actions", b =>
                 {
                     b.Navigation("ActionAfterOrder");
+
+                    b.Navigation("ActionAfterRegister");
                 });
 
             modelBuilder.Entity("Domain.Entities.Marketing.AfterOrderRules", b =>
                 {
                     b.Navigation("AfterOrderRuleAfterOrder");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Marketing.AfterRegisterRules", b =>
+                {
+                    b.Navigation("AfterRegisterRuleAfterRegister");
                 });
 #pragma warning restore 612, 618
         }

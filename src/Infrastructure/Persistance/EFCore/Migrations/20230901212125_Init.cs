@@ -86,6 +86,40 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "after_register_rules",
+                columns: table => new
+                {
+                    id = table.Column<ulong>(type: "bigint unsigned", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    description = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    enable = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    has_referrer = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    start_at = table.Column<DateOnly>(type: "date", nullable: true),
+                    stop_at = table.Column<DateOnly>(type: "date", nullable: true),
+                    start_time = table.Column<TimeOnly>(type: "time(6)", nullable: true),
+                    stop_time = table.Column<TimeOnly>(type: "time(6)", nullable: true),
+                    platforms = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    min_version = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    max_version = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    cities = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP")
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_after_register_rules", x => x.id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "campaigns",
                 columns: table => new
                 {
@@ -121,6 +155,26 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "reports",
+                columns: table => new
+                {
+                    id = table.Column<ulong>(type: "bigint unsigned", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    user_id = table.Column<ulong>(type: "bigint unsigned", nullable: false),
+                    action_type = table.Column<int>(type: "int", nullable: false),
+                    extra = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP")
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_reports", x => x.id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "after_order_actions",
                 columns: table => new
                 {
@@ -128,6 +182,8 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     action_id = table.Column<ulong>(type: "bigint unsigned", nullable: false),
                     after_order_rule_id = table.Column<ulong>(type: "bigint unsigned", nullable: false),
+                    max_execution = table.Column<ushort>(type: "smallint unsigned", nullable: true),
+                    count_executed = table.Column<ushort>(type: "smallint unsigned", nullable: true),
                     created_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     updated_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP")
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn)
@@ -150,6 +206,38 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "after_register_actions",
+                columns: table => new
+                {
+                    id = table.Column<ulong>(type: "bigint unsigned", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    action_id = table.Column<ulong>(type: "bigint unsigned", nullable: false),
+                    after_register_rule_id = table.Column<ulong>(type: "bigint unsigned", nullable: false),
+                    max_execution = table.Column<ushort>(type: "smallint unsigned", nullable: true),
+                    count_executed = table.Column<ushort>(type: "smallint unsigned", nullable: true),
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP")
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_after_register_actions", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_after_register_actions_actions_action_belong_id",
+                        column: x => x.action_id,
+                        principalTable: "actions",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_after_register_actions_after_register_rules_after_register_rul",
+                        column: x => x.after_register_rule_id,
+                        principalTable: "after_register_rules",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateIndex(
                 name: "ix_after_order_actions_action_id",
                 table: "after_order_actions",
@@ -159,6 +247,16 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                 name: "ix_after_order_actions_after_order_rule_id",
                 table: "after_order_actions",
                 column: "after_order_rule_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_after_register_actions_action_id",
+                table: "after_register_actions",
+                column: "action_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_after_register_actions_after_register_rule_id",
+                table: "after_register_actions",
+                column: "after_register_rule_id");
 
             migrationBuilder.CreateIndex(
                 name: "ix_processed_orders_order_id",
@@ -173,16 +271,25 @@ namespace Infrastructure.Persistance.EFCore.Migrations
                 name: "after_order_actions");
 
             migrationBuilder.DropTable(
+                name: "after_register_actions");
+
+            migrationBuilder.DropTable(
                 name: "campaigns");
 
             migrationBuilder.DropTable(
                 name: "processed_orders");
 
             migrationBuilder.DropTable(
-                name: "actions");
+                name: "reports");
 
             migrationBuilder.DropTable(
                 name: "after_order_rules");
+
+            migrationBuilder.DropTable(
+                name: "actions");
+
+            migrationBuilder.DropTable(
+                name: "after_register_rules");
         }
     }
 }

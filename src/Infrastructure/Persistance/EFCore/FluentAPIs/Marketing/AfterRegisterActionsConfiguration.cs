@@ -5,22 +5,22 @@ using Domain.Entities.Marketing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class AfterOrderActionsConfiguration : BaseEntityConfiguration<AfterOrderActions>, IEntityTypeConfiguration<AfterOrderActions>
+public class AfterRegisterActionsConfiguration : BaseEntityConfiguration<AfterRegisterActions>, IEntityTypeConfiguration<AfterRegisterActions>
 {
-    public void Configure(EntityTypeBuilder<AfterOrderActions> builder)
+    public void Configure(EntityTypeBuilder<AfterRegisterActions> builder)
     {
         BaseConfigure(builder);
 
         builder.Property(property => property.ActionId).IsRequired();
-        builder.Property(property => property.AfterOrderRuleId).IsRequired();
+        builder.Property(property => property.AfterRegisterRuleId).IsRequired();
         builder.Property(property => property.MaxExecution).IsRequired(false);
         builder.Property(property => property.CountExecuted).IsRequired(false);
 
         builder.HasOne(property => property.ActionBelong)
-            .WithMany(relation => relation.ActionAfterOrder)
+            .WithMany(relation => relation.ActionAfterRegister)
             .HasForeignKey(property => property.ActionId);
-        builder.HasOne(property => property.AfterOrderRuleBelong)
-            .WithMany(relation => relation.AfterOrderRuleAfterOrder)
-            .HasForeignKey(property => property.AfterOrderRuleId);
+        builder.HasOne(property => property.AfterRegisterRuleBelong)
+            .WithMany(relation => relation.AfterRegisterRuleAfterRegister)
+            .HasForeignKey(property => property.AfterRegisterRuleId);
     }
 }

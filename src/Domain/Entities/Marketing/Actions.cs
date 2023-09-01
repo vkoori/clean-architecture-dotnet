@@ -14,4 +14,5 @@ public class Actions : BaseEntity
     // public required string MessageTemplate { get; set; }
 
     public ICollection<AfterOrderActions>? ActionAfterOrder { get; set; }
+    public ICollection<AfterRegisterActions>? ActionAfterRegister { get; set; }
 }
