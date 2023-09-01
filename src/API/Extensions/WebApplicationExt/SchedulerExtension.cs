@@ -8,10 +8,13 @@ public static class SchedulerExtension
 {
     public static void UseCustomScheduler(this WebApplication app)
     {
-        app.Services.UseScheduler(scheduler =>
-        {
-            scheduler.Schedule<DbPartitioning>().Weekly().RunOnceAtStart();
-        }).LogScheduledTaskProgress(app.Services.GetService<ILogger<IScheduler>>());;
-
+        app.Services.UseScheduler(
+            assignScheduledTasks: scheduler =>
+            {
+                scheduler.Schedule<DbPartitioning>().Weekly().RunOnceAtStart().Zoned(timeZoneInfo: TimeZoneInfo.Local);
+            }
+        ).LogScheduledTaskProgress(
+            logger: app.Services.GetService<ILogger<IScheduler>>()
+        );
     }
 }
