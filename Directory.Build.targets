@@ -64,6 +64,7 @@
     <PackageReference Update="StackExchange.Redis" Version="2.6.116"/>
     <PackageReference Update="Newtonsoft.Json" Version="13.0.3"/>
     <PackageReference Update="FluentValidation" Version="11.6.0" />
+    <PackageReference Update="Coravel" Version="5.0.2" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using API.Extensions.MvcOptionsExt;
 using API.Extensions.WebApplicationBuilderExt;
 using API.Extensions.WebApplicationExt;
 using API.Extensions.ApiBehaviorOptionsExt;
+using Coravel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,8 @@ builder.Services.AddBusinessServices();
 
 builder.Services.AddValidatorServices();
 
+builder.Services.AddScheduler();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,5 +56,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCustomScheduler();
 
 app.Run();

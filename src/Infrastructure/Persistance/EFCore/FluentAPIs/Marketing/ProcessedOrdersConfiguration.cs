@@ -6,30 +6,22 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 public class ProcessedOrdersConfiguration : IEntityTypeConfiguration<ProcessedOrders>
 {
+    public static string TableName {get;} = "processed_orders";
     public void Configure(EntityTypeBuilder<ProcessedOrders> builder)
     {
+        builder.ToTable(TableName);
+
         builder.Property(property => property.OrderId).IsRequired();
         builder.Property(property => property.AfterOrderRuleId).IsRequired();
         builder.Property(property => property.ActionId).IsRequired();
         builder.Property(property => property.CreatedAt)
             .IsRequired()
+            .HasColumnName("created_at")
             .HasColumnType("datetime")
             .HasDefaultValueSql("CURRENT_TIMESTAMP")
             .ValueGeneratedOnAdd();
 
         builder.HasKey(property => property.CreatedAt);
         builder.HasIndex(property => property.OrderId);
-
-        // Execute raw query to set up partitioning
-        var now = DateTime.Now;
-        builder.Metadata.SetAnnotation(
-            "MySql:ExecuteSqlRaw",
-            "ALTER TABLE `processed_orders` " +
-            "PARTITION BY RANGE(YEAR(created_at) * 100 + MONTH(created_at)) " +
-            "( " +
-                "PARTITION " + ("p" + now.ToString("yyyyMM")) + " VALUES LESS THAN (" + (Int32.Parse(now.ToString("yyyy")) * 100 + Int32.Parse(now.ToString("MM"))).ToString() + "), " +
-                "PARTITION " + ("p" + (Int32.Parse(now.ToString("yyyyMM")) + 1).ToString()) + " VALUES LESS THAN (" + (Int32.Parse(now.ToString("yyyy")) * 100 + Int32.Parse(now.ToString("MM")) + 1).ToString() + ") " +
-            ");"
-        );
     }
 }
