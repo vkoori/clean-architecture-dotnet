@@ -40,6 +40,8 @@ builder.Services.AddValidatorServices();
 
 builder.Services.AddScheduler();
 
+builder.Services.AddEvents();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

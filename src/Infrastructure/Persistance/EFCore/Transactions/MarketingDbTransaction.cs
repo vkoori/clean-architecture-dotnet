@@ -22,11 +22,16 @@ public class MarketingDbTransaction : IMarketingTransactionProvider
             await action.Invoke();
             await CommitTransactionAsync(transaction: transaction);
         }
-        catch (System.Exception e)
+        catch
         {
             await RollbackTransactionAsync(transaction: transaction);
-            throw e;
+            throw;
         }
+    }
+
+    protected MarketingDbContext GetDbContext()
+    {
+        return _dbContext;
     }
 
     protected virtual async Task CommitTransactionAsync(IDbContextTransaction transaction)
