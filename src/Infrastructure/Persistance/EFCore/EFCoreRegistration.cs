@@ -15,7 +15,7 @@ public static class EFCoreRegistration
                     ServerVersion.AutoDetect(connectionString),
                     options =>
                     {
-                        options.EnableRetryOnFailure();
+                        // options.EnableRetryOnFailure();
                         options.CommandTimeout(timeout);
                     }
                 ).UseSnakeCaseNamingConvention();
@@ -24,7 +24,7 @@ public static class EFCoreRegistration
 
     public static void AddEFCoreCoreDbContext(this IServiceCollection services, string connectionString, int timeout = 30)
     {
-        services.AddDbContext<MarketingDbContext>(options =>
+        services.AddDbContext<CoreDbContext>(options =>
         {
             options
                 .UseMySql(
@@ -32,7 +32,7 @@ public static class EFCoreRegistration
                     ServerVersion.AutoDetect(connectionString),
                     options =>
                     {
-                        options.EnableRetryOnFailure();
+                        // options.EnableRetryOnFailure();
                         options.CommandTimeout(timeout);
                     }
                 ).UseSnakeCaseNamingConvention();

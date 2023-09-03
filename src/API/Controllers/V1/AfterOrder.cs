@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 [ApiVersion("1.0")]
 public class AfterOrder
 {
-    [HttpGet()]
+    [HttpPost()]
     public async Task Store([FromBody] AfterOrderAddDtoV1 body, IAfterOrderAddServiceV1 serviceV1)
     {
         /* return  */await serviceV1.Handle(dto: body);

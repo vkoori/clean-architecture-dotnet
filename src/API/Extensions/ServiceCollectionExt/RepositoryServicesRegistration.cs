@@ -1,6 +1,5 @@
 namespace API.Extensions.ServiceCollectionExt;
 
-using Application.Scheduling;
 using Domain.Repositories.Marketing;
 using Infrastructure.Repositories.Marketing;
 
@@ -13,7 +12,5 @@ public static class RepositoryServicesRegistration
         services.AddScoped<IAfterOrderRulesRepository, AfterOrderRulesRepository>();
         services.AddScoped<ICampaignsRepository, CampaignsRepository>();
         services.AddScoped<IProcessedOrdersRepository, ProcessedOrdersRepository>();
-
-        services.AddTransient<DbPartitioning>();
     }
 }

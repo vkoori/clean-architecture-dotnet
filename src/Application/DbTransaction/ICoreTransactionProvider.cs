@@ -2,7 +2,7 @@ namespace Application.DbTransaction;
 
 using System;
 
-public interface ITransactionProvider
+public interface ICoreTransactionProvider
 {
     Task Transaction(Func<Task> action);
 }
