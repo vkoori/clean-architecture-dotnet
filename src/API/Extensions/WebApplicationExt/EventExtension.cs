@@ -2,8 +2,8 @@ namespace API.Extensions.WebApplicationExt;
 
 using Coravel;
 using Coravel.Events.Interfaces;
-using Infrastructure.Events;
-using Infrastructure.Listeners;
+// using Application.Events;
+// using Application.Listeners;
 
 public static class EventExtension
 {
@@ -11,11 +11,11 @@ public static class EventExtension
     {
         IEventRegistration registration = app.Services.ConfigureEvents();
 
-        registration
-            .Register<TransactionCommitted>()
-            .Subscribe<SaveCommittedLog>();
-        registration
-            .Register<TransactionRollbacked>()
-            .Subscribe<SaveRollbackedLog>();
+        // registration
+        //     .Register<TransactionCommitted>()
+        //     .Subscribe<SaveCommittedLog>();
+        // registration
+        //     .Register<TransactionRollbacked>()
+        //     .Subscribe<SaveRollbackedLog>();
     }
 }

@@ -1,6 +1,9 @@
 i18n
-query logger
 shared campaign
-observer
-fluent api
-exception handling
+observer (saving, saved, updating, updated, ...)
+fluent api (click house)
+fix exception handling
+autoMapper
+fix cors
+fix audit log
+add sample event (after action call some events)

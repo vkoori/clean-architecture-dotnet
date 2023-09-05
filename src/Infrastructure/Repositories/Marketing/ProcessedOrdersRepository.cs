@@ -28,7 +28,7 @@ public class ProcessedOrdersRepository : IProcessedOrdersRepository
         string sql = @$"ALTER TABLE `{tableName}` 
         PARTITION BY RANGE(YEAR(created_at) * 100 + MONTH(created_at)) 
         ( 
-            PARTITION p{partitionName} VALUES LESS THAN ({partitionLessThan})
+            PARTITION {partitionName} VALUES LESS THAN ({partitionLessThan})
         );";
 
         await _dbContext.Database.ExecuteSqlRawAsync(sql: sql);
@@ -43,7 +43,7 @@ public class ProcessedOrdersRepository : IProcessedOrdersRepository
         string sql = @$"ALTER TABLE `{tableName}` 
         ADD PARTITION 
         ( 
-            PARTITION p{partitionName} VALUES LESS THAN ({partitionLessThan})
+            PARTITION {partitionName} VALUES LESS THAN ({partitionLessThan})
         );";
 
         await _dbContext.Database.ExecuteSqlRawAsync(sql: sql);
@@ -69,7 +69,7 @@ public class ProcessedOrdersRepository : IProcessedOrdersRepository
 
     private static string GetPartitionName(DateTime dateTime)
     {
-        return dateTime.ToString("yyyyMM");
+        return "p" + dateTime.ToString("yyyyMM");
     }
 
     private static string GetPartitionLessThan(DateTime dateTime)
