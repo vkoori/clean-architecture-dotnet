@@ -4,9 +4,6 @@ using API.Extensions.WebApplicationBuilderExt;
 using API.Extensions.WebApplicationExt;
 using API.Extensions.ApiBehaviorOptionsExt;
 using Coravel;
-using FluentQueue;
-using FluentQueue.Implementation.Connection;
-using FluentQueue.Implementation.Drivers.RabbitMq.Connection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,22 +42,7 @@ builder.Services.AddScheduler();
 
 builder.Services.AddEvents();
 
-builder.Services.AddMessageBus(
-    connections: new Dictionary<string, BaseBusConnectionDtoAbstract>
-    {
-        {
-            "LocalRabbit",
-            new RabbitMqConnectionDto{
-                HostName = "127.0.0.1",
-                Port = 5672,
-                UserName = "guest",
-                Password = "guest",
-                VirtualHost = "/"
-            }
-        }
-    },
-    defaultConnection: "LocalRabbit"
-);
+builder.Services.AddBus();
 
 var app = builder.Build();
 

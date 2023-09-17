@@ -55,7 +55,7 @@ public class AfterOrderAddServiceV1 : IAfterOrderAddServiceV1
         ).OnConnection(
             connection: "LocalRabbit"
         ).OnDelay(
-            availableAt: DateTime.Now.AddSeconds(120)
+            availableAt: DateTime.Now.AddSeconds(5)
         ).Dispatch();
 
         /* var e = new AfterOrderRules{

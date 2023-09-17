@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" />
     <PackageReference Include="Coravel"/>
-    <PackageReference Include="Fluent.Queue"/>
+    <PackageReference Include="Fluent.Queue" />
   </ItemGroup>
 
   <ItemGroup>
